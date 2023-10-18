@@ -4,6 +4,7 @@ const navbar = () => {
 
     const NavLinks= <>
         <li><NavLink  activeClassName="active" className="py-1 hover:text-red-500" to="/">Home</NavLink></li>
+        <li><NavLink  activeClassName="active" className="py-1 hover:text-red-500" to="/addProduct">Add Product</NavLink></li>
         <li><NavLink  activeClassName="active" className="py-1 hover:text-red-500" to="/about">About US</NavLink></li>
         <li><NavLink  activeClassName="active" className="py-1 hover:text-red-500" to="/about">About US</NavLink></li>
          </>

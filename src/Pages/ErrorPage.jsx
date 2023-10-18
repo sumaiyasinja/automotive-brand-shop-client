@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Navigation } from 'swiper/modules';
 
 const ErrorPage = () => {
     const navigate= useNavigate()
