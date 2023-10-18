@@ -3,16 +3,16 @@ import { useEffect, useState } from "react";
 const Brands = () => {
     const [cars, setCars] = useState([])
 
-    const carBrands = ['tesla', 'bmw', 'benz', 'ferrari', 'ford', 'audi'];
+    const carBrands = ['tesla', 'bmw', 'mercedes', 'ferrari', 'ford', 'audi'];
     const uniqueBrands = [];
 
     const brandLogos = {
         tesla: 'https://listing.maxwheelswp.com/wp-content/uploads/2021/03/tesla_logo_PNG19.png',
-        bmw: 'URL_FOR_BMW_LOGO',
-        benz: 'URL_FOR_BENZ_LOGO',
-        ferrari: 'URL_FOR_FERRARI_LOGO',
-        ford: 'URL_FOR_FORD_LOGO',
-        audi: 'URL_FOR_AUDI_LOGO',
+        bmw: 'https://listing.maxwheelswp.com/wp-content/uploads/2021/03/bmw.png',
+        mercedes: 'https://listing.maxwheelswp.com/wp-content/uploads/2021/03/mercedes.png',
+        ferrari: 'https://listing.maxwheelswp.com/wp-content/uploads/2021/04/ferrari_.png',
+        ford: 'https://listing.maxwheelswp.com/wp-content/uploads/2021/03/ford-logo-icon-png-14228.png',
+        audi: 'https://listing.maxwheelswp.com/wp-content/uploads/2021/03/audi-logo-2.png',
       };
       
 
@@ -40,14 +40,22 @@ const Brands = () => {
     }
     
     return (
-        <div>
-            <h2>Browse By Brands</h2>
-            <div className="flex flex-wrap justify-betweenS items-center">
+        <div className=" my-6 ">
+            <h2 className="text-4xl font-bold text-center p-6">Browse By Brands</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 pb-10 justify-between items-center">
            {uniqueBrands?.map((brand) => (
-          <div key={brand}>
-            <img src={brandLogos[brand]} alt={brand} />
-            <h3>{brand}</h3>
+        
+        <div  key={brand} className=" w-96 bg-base-100 shadow-xl rounded-xl">
+                <figure className="h-64 flex justify-center items-center text-center"> 
+                    <img src={brandLogos[brand]} alt={brand}/>
+                </figure>
+          <div className=" w-full px-3 py-4 font-semibold text-center ">
+            <p className="text-gray-400 text-xs">Category</p>
+            <h2 className="card-title capitalize text-red-500">{brand}</h2>
+
           </div>
+        </div>
+
         ))}
 
             </div>
@@ -56,3 +64,8 @@ const Brands = () => {
 };
 
 export default Brands;
+
+
+
+
+
