@@ -7,4 +7,31 @@
     border-bottom: 2px solid red; 
   }
 
- 
+  .custom-btn {
+    font-weight: 600;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    /* background: linear-gradient(to bottom, #fd6c4b, #f03824); */
+    background: red;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+    transform: scale(1.05);
+    background: white;
+    color: red;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+.hover-red{
+  box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.7);
+}
+.move-left {
+  transform: translateX(-500px);
+  transition: transform 1s; /* Apply a 1-second transition for smooth movement */
+}
