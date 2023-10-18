@@ -5,7 +5,6 @@ const AddProduct = () => {
     
     const handleAddProduct = event => {
         event.preventDefault();
-        console.log("hi")
 
         const form = event.target;
 
@@ -15,9 +14,9 @@ const AddProduct = () => {
         const brands = form.brands.value;
         const types = form.types.value;
         const description = form.description.value;
-        // const photo = form.photo.value;
+        const photo = form.photo.value;
 
-        const newCar = { name, price, rating,brands,types, description}
+        const newCar = { name, price, rating,brands,types, description,photo}
 
         console.log(newCar);
 
@@ -72,12 +71,12 @@ const AddProduct = () => {
                 name="brands"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
               >
-                <option value="TV">Telsa</option>
-                <option value="PC">Ford</option>
-                <option value="GA">BMW</option>
-                <option value="PH">Toyota</option>
-                <option value="AC">Mercedes-Benz</option>
-                <option value="OT">Honda</option>
+                <option value="tesla">Telsa</option>
+                <option value="bmw">BMW</option>
+                <option value="benz">Mercedes Benz</option>
+                <option value="ferrari">Ferrari</option>
+                <option value="ford">Ford</option>
+                <option value="Audi">Audi</option>
               </select>
             </div>
             <div className="w-full">
@@ -119,6 +118,22 @@ const AddProduct = () => {
                 placeholder="Product rating"
                 required
               />
+            </div>
+            <div className="w-full">
+              <label htmlFor="photo"  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                photo
+              </label>
+              <input
+                type="file"
+                name="photo"
+                id="photo"
+
+                className=" text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
+                   focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5   dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                placeholder="Product photo"
+                required
+              />
+              
             </div>
 
                 <div className="sm:col-span-2">
