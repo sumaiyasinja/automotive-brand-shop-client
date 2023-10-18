@@ -7,6 +7,8 @@ const navbar = () => {
         <li><NavLink  activeClassName="active" className="py-1 hover:text-red-500" to="/about">About US</NavLink></li>
         <li><NavLink  activeClassName="active" className="py-1 hover:text-red-500" to="/about">About US</NavLink></li>
          </>
+        //  https://quattro.true-emotions.studio/cart/
+        // https://quattro.true-emotions.studio/
 
     return (
     <div className="navbar bg-[#000000AA] fixed z-10">
