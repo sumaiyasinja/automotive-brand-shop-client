@@ -8,6 +8,9 @@ import ErrorPage  from './Pages/ErrorPage';
 import AddProduct from './Pages/AddProduct';
 import UpdateProduct from './Pages/UpdateProduct';
 import DeleteProduct from './Pages/DeleteProduct';
+import SignIn from './Pages/SignIn';
+import Regsiter from './Pages/Regsiter';
+import AuthProvider from './provider/AuthProvider';
 
 
 const router = createBrowserRouter([
@@ -34,6 +37,14 @@ const router = createBrowserRouter([
         path: "/deleteProduct",
         element: <DeleteProduct />,
       },
+      {
+        path: "/signin",
+        element: <SignIn />,
+      },
+      {
+        path: "/signup",
+        element: <Regsiter />,
+      },
 
     ],
   },
@@ -41,6 +52,11 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-       <RouterProvider router={router} />
+    
+    {/* <AuthProvider> */}
+      <AuthProvider>
+           <RouterProvider router={router}></RouterProvider>
+      </AuthProvider>
+
   </React.StrictMode>,
 )

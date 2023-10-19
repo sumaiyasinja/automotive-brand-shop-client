@@ -30,6 +30,7 @@ const AddProduct = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data)
+            
             if(data.insertedId){
                 Swal.fire({
                     title: 'Success!',
@@ -37,6 +38,7 @@ const AddProduct = () => {
                     icon: 'success',
                     confirmButtonText: 'Superb'
                   })
+                  form.reset()
             }
         })
     }
@@ -111,7 +113,7 @@ const AddProduct = () => {
                 Rating
               </label>
               <input
-                type="number"
+                type="text"
                 name="rating"
                 id="rating"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
