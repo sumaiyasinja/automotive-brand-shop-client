@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
 
-const navbar = () => {
+const Navbar = () => {
 
     const {user,logOut} = useContext(AuthContext)    
 
@@ -89,4 +89,4 @@ const navbar = () => {
     );
 };
 
-export default navbar;
+export default Navbar;
