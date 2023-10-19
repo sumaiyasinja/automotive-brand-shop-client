@@ -20,7 +20,7 @@ const AddProduct = () => {
 
         console.log(newCar);
 
-        fetch('http://localhost:5000/products', {
+        fetch('https://automotive-brand-shop-server.vercel.app/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -124,13 +124,13 @@ const AddProduct = () => {
                 photo
               </label>
               <input
-                type="file"
+                type="text"
                 name="photo"
                 id="photo"
 
                 className=" text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
                    focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5   dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                placeholder="Product photo"
+                placeholder="Photo URL:"
                 required
               />
               

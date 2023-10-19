@@ -1,7 +1,11 @@
+import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
 const UpdateProduct = () => {
-    const handleAddProduct = event => {
+  const loadedCar = useLoaderData();
+  console.log(loadedCar)
+
+    const handleUpdateProduct = event => {
         event.preventDefault();
 
         const form = event.target;
@@ -14,43 +18,41 @@ const UpdateProduct = () => {
         const description = form.description.value;
         const photo = form.photo.value;
 
-        const newCar = { name, price, rating,brands,types, description,photo}
+        const updatedCar = { name, price, rating,brands,types, description,photo}
 
-        console.log(newCar);
+        console.log(updatedCar);
 
-        fetch('http://localhost:5000/products/:id', {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(newCar)
+        fetch(`https://automotive-brand-shop-server.vercel.app/products/${loadedCar._id}`, {
+          method: 'PUT',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(updatedCar)
         })
+
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            if(data.insertedId){
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Product Added Successfully',
-                    icon: 'success',
-                    confirmButtonText: 'Superb'
-                  })
-            }
+            
         })
+
+
     }
     return (
         <section className="bg-white dark:bg-gray-900 pt-14">
         <div className="py-8 px-4 mx-auto max-w-2xl lg:py-6">
           <h2 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white py-2">
-            Add a new product
+            Update a product
           </h2>
-          <form onSubmit={handleAddProduct}>
+          <form onSubmit={handleUpdateProduct}>
             <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
               <div className="sm:col-span-2">
                 <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                   Product Name
                 </label>
-                <input
+                <input  
+                 defaultValue={loadedCar?.name}
+
                   type="text"
                   name="name"
                   id="name"
@@ -67,6 +69,7 @@ const UpdateProduct = () => {
                 <select
                   id="brands"
                   name="brands"
+                  defaultValue={loadedCar?.brands}
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 >
                   <option value="tesla">Telsa</option>
@@ -81,7 +84,8 @@ const UpdateProduct = () => {
                 <label htmlFor="brand" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                   Types
                 </label>
-                <input
+                <input 
+                defaultValue={loadedCar?.types}
                   type="text"
                   name="types"
                   id="types"
@@ -95,6 +99,7 @@ const UpdateProduct = () => {
                   Price
                 </label>
                 <input
+                  defaultValue={loadedCar?.price}
                   type="number"
                   name="price"
                   id="price"
@@ -108,7 +113,7 @@ const UpdateProduct = () => {
                 <label htmlFor="rating"  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                   Rating
                 </label>
-                <input
+                <input defaultValue={loadedCar?.rating}
                   type="number"
                   name="rating"
                   id="rating"
@@ -122,7 +127,8 @@ const UpdateProduct = () => {
                   photo
                 </label>
                 <input
-                  type="file"
+                defaultValue={loadedCar?.photo}
+                type="text"
                   name="photo"
                   id="photo"
   
@@ -138,7 +144,8 @@ const UpdateProduct = () => {
                 <label htmlFor="description" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                   Description
                 </label>
-                <textarea
+                <textarea 
+                defaultValue={loadedCar?.description}
                   name="description"
                   id="description"
                   rows="8"
@@ -149,10 +156,10 @@ const UpdateProduct = () => {
           
             </div>
             <div className="flex justify-center items-center">
-              <input
+              <input 
                 type="submit"
-                className="font-medium mt-3 text-center bg-primary-700 custom-btn px-5 py-2.5 rounded-lg focus:ring-4 "
-                value="Add product"
+                className="custom-btn mt-3 text-center bg-green-400 px-5 py-2.5 rounded-lg focus:ring-4 "
+                value="Update product"
               />
             </div>
           </form>

@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       {
         path: "/updateProduct/:id",
         element: <UpdateProduct />,
-        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+        loader: ({ params }) => fetch(`https://automotive-brand-shop-server.vercel.app/products/${params.id}`),
       },
       
       {

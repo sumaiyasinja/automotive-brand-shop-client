@@ -17,7 +17,7 @@ const Brands = () => {
       
 
     useEffect(()=>{
-        fetch('http://localhost:5000/products')
+        fetch('https://automotive-brand-shop-server.vercel.app/products')
         .then(res => res.json())
         .then(data => {
             setCars(data)
@@ -42,18 +42,19 @@ const Brands = () => {
     return (
         <div className=" my-6 ">
             <h2 className="text-4xl font-bold text-center p-6">Browse By Brands</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 pb-10 justify-between items-center">
-           {uniqueBrands?.map((brand) => (
-        
-        <div  key={brand} className=" w-96 bg-base-100 shadow-xl rounded-xl">
+            <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 pb-10 justify-between items-center">
+                
+                {uniqueBrands?.map((brand) => (        
+                <div onClick={() => console.log(brand)}  key={brand} className="cursor-pointer w-96 bg-base-100 shadow-xl rounded-xl">
                 <figure className="h-64 flex justify-center items-center text-center"> 
                     <img src={brandLogos[brand]} alt={brand}/>
                 </figure>
-          <div className=" w-full px-3 py-4 font-semibold text-center ">
-            <p className="text-gray-400 text-xs">Category</p>
-            <h2 className="card-title capitalize text-red-500">{brand}</h2>
+                <hr />
+                <div className=" w-full px-3 py-4 font-semibold ">
+                <p className="text-gray-400 text-xs">Category</p>
+                <h2 className="card-title capitalize text-red-500">{brand}</h2>
 
-          </div>
+            </div>
         </div>
 
         ))}
