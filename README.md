@@ -3,6 +3,9 @@
 
 A brand car shop where mongodb used for CRUD operation and firebase for login/registration authentication.
 
+## Live Link
+
+[DrivenWays](https://drivenways-car-shop.web.app/)
 
 ## Authors
 
@@ -46,13 +49,4 @@ Start the server
   npm run dev
 ```
 
-
-## Appendix
-
-Any additional information goes here
-
-
-## Live Link
-
-[DrivenWays](https://drivenways-car-shop.web.app/)
 
