@@ -1,23 +1,41 @@
-import React from 'react';
+
+import { useContext } from 'react';
+import { AuthContext } from './../provider/AuthProvider';
+import Swal from 'sweetalert2'
 
 const SingleProductDetails = ({product}) => {
     const {photo,name,types,price,rating,description,brands} = product
 
-    const handleAddCart =(cartProduct)=>{
-        console.log('cart')
-        console.log(cartProduct)
+    const {user} = useContext(AuthContext)
+
+
+    const handleAddCart =(product)=>{
+        console.log(product)
+        const email = user?.email
+            const{ photo,name,types,price,brands }=product
+            const cart = { photo, name, types, price, brands, email}
+            console.log(cart);
 
         fetch("http://localhost:5000/cart", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(cartProduct),
+            body: JSON.stringify(cart),
             })
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
                 console.log("added to cart");
+                if(data.insertedId){
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Your Iteam has been added to your cart.',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                }
             });
         };
       

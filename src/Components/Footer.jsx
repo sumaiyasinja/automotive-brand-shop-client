@@ -2,7 +2,10 @@
 const Footer = () => {
     return (
         <div className="relative w-full">
-        <img className="" src="https://i.ibb.co/CKzB6jb/pexels-abdulwahab-alawadhi-3422964.jpg" alt="" />
+			<div className="h-[10%]">
+        <img  src="https://i.ibb.co/CKzB6jb/pexels-abdulwahab-alawadhi-3422964.jpg" alt="" />
+
+			</div>
         
         <footer className="absolute top-0 flex justify-center items-center py-6 bg-[#000000AA] h-full text-white w-full">
 	<div className="container px-6 mx-auto space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50">

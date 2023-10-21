@@ -8,6 +8,15 @@ export const AuthContext = createContext(null);
 
 const AuthProvider = ({children}) => {
     const googleProvider = new GoogleAuthProvider();
+    const [isDarkMode, setDarkMode] = useState(false);
+
+    const toggleDarkMode = () => {
+      setDarkMode(!isDarkMode);
+    };
+  
+      const myToggle=<div >
+      <button className='custom-btn' onClick={toggleDarkMode}>{isDarkMode ? 'Light' : 'Dark'}</button>
+    </div>
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -49,6 +58,8 @@ const AuthProvider = ({children}) => {
         loginWithEmailAndPasword,
         loginWithGoogle,
         logOut,
+        myToggle,
+        isDarkMode
     }
 
     

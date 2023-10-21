@@ -82,12 +82,12 @@ const Banner = () => {
                 </div>
           </div>
       </div>
-      <div id="item4" className="carousel-item w-full">
+      {/* <div id="item4" className="carousel-item w-full">
         <img
           src="/images/stock/photo-1665553365602-b2fb8e5d1707.jpg"
           className="w-full"
         />
-      </div>
+      </div> */}
     </div>
   );
 };

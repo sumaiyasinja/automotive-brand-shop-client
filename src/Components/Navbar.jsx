@@ -1,17 +1,18 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
 
 const Navbar = () => {
+    const {myToggle}= useContext(AuthContext)
 
     const {user,logOut} = useContext(AuthContext)    
 
     const NavLinks= <>
         <li><NavLink  activeClassName="active" className="py-1 hover:text-red-500" to="/">Home</NavLink></li>
         <li><NavLink  activeClassName="active" className="py-1 hover:text-red-500" to="/addProduct">Add Product</NavLink></li>
-        <li><NavLink  activeClassName="active" className="py-1 hover:text-red-500" to="/updateProduct/65326c46bb6dc21bbeb94c5b">Up Product</NavLink></li>
-        <li><NavLink  activeClassName="active" className="py-1 hover:text-red-500" to="/mycart">My Cart</NavLink></li>
+        {/* <li><NavLink  activeClassName="active" className="py-1 hover:text-red-500" to="/updateProduct/65326c46bb6dc21bbeb94c5b">Up Product</NavLink></li> */}
+        <li><NavLink  activeClassName="active" className="py-1 hover:text-red-500" to="/cart">My Cart</NavLink></li>
          </>
         //  https://quattro.true-emotions.studio/cart/
         // https://quattro.true-emotions.studio/
@@ -26,6 +27,8 @@ const Navbar = () => {
     
                 toast.error("error occured while doing logout", error.message)})
         }
+
+      
     
 
     return (
@@ -45,7 +48,13 @@ const Navbar = () => {
         </div>
         <div className="flex items-center justify-center">
         <img className="max-h-14" src="https://i.ibb.co/8gqXQY9/wepik-modern-carepair-car-service-logo-20231018123809j-Tq-J.png" alt="" />
+        
+       
+        {
+            myToggle
+        }
 
+    
         </div>
     </div>
     <div className="navbar-center hidden lg:flex">
@@ -55,7 +64,9 @@ const Navbar = () => {
 
         </ul>
     </div>
-    <div className="navbar-end text-sm gap-3">
+<button>Dark Light</button>    
+
+<div className="navbar-end text-sm gap-3">
             {user ?             
                 <div className='flex flex-row-reverse gap-3 items-center'>
                     <div className="avatar">

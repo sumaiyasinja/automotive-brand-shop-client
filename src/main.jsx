@@ -13,6 +13,7 @@ import AuthProvider from './provider/AuthProvider';
 import PrivateRoutes from './routes/PrivateRoutes';
 import DisplayProducts from './Pages/DisplayProducts';
 import BrandPage from './Components/BrandPage';
+import MyCart from './Pages/MyCart';
 
 
 const router = createBrowserRouter([
@@ -29,29 +30,39 @@ const router = createBrowserRouter([
         path: "/addProduct",
         element: <PrivateRoutes><AddProduct /></PrivateRoutes>
       },
-      {
-        path: "/products",
-        element: <PrivateRoutes><DisplayProducts /></PrivateRoutes>,
-        loader: () => fetch("http://localhost:5000/products"),
-      },
+      // {
+      //   path: "/products",
+      //   element: <PrivateRoutes><DisplayProducts /></PrivateRoutes>,
+      //   loader: () => fetch("http://localhost:5000/products"),
+      // },
       {
         path: "/products/:id",
-        element: <DisplayProducts />,
-        loader: () => fetch("http://localhost:5000/products"),
-        // loader: ({ params }) => fetch(`http://localhost:5173/products/${params.id}`),
+        element: <PrivateRoutes><DisplayProducts /></PrivateRoutes>,
+        loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`),
       },
       {
-        path: "/updateProduct/:id",
-        element: <UpdateProduct />,
-        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`),
-        // loader: ({ params }) => fetch(`https://automotive-brand-shop-server.vercel.app/products/${params.id}`),
+        path: "/update/:id",
+        element: <PrivateRoutes><UpdateProduct /></PrivateRoutes> ,
+        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
       },
+      // {
+      //   path: "/updateProduct/:id",
+      //   element: <UpdateProduct />,
+      //   loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`),
+      // },
       {
         path: "/brands/:brands",
         element: <PrivateRoutes><BrandPage /></PrivateRoutes> ,
         loader: () => fetch("http://localhost:5000/products"),
 
       },
+      {
+        path: "/cart",
+        element: <PrivateRoutes><MyCart /></PrivateRoutes> ,
+
+      },
+      
+
       
 
 

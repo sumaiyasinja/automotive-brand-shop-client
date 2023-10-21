@@ -1,9 +1,11 @@
 import { useLoaderData } from 'react-router-dom';
-// import Swal from 'sweetalert2'
+import Swal from 'sweetalert2'
+import { useParams } from 'react-router-dom';
 
 const UpdateProduct = () => {
+  const { id } = useParams();
   const loadedCar = useLoaderData();
-  console.log(loadedCar)
+  console.log(loadedCar,id)
 
     const handleUpdateProduct = event => {
         event.preventDefault();
@@ -22,22 +24,32 @@ const UpdateProduct = () => {
 
         console.log(updatedCar);
 
-        // fetch(`https://automotive-brand-shop-server.vercel.app/products/${loadedCar._id}`, {
 
-        fetch(`http://localhost:5173/products/${loadedCar._id}`, {
-            method: "PUT",
+            fetch(`http://localhost:5000/products/${id}`, {
+              method: 'PUT',
             headers: {
-              "Content-Type": "application/json",
+                'content-type': 'application/json'
             },
-            body: JSON.stringify(updatedCar),
-          })
-            .then((res) => res.json())
-            .then((data) => {
-              console.log(data);
-            });
-
-
+            body: JSON.stringify(updatedCar)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                  Swal.fire({
+                    title: 'Updated Sucessfully!',
+                    showClass: {
+                      popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                      popup: 'animate__animated animate__fadeOutUp'
+                    }
+                  })
+                }
+                history.back();
+            })
     }
+    
       
     return (
       <section className="bg-white dark:bg-gray-900 pt-14">
@@ -160,7 +172,7 @@ const UpdateProduct = () => {
             <input
               type="submit"
               className="font-medium mt-3 text-center bg-primary-700 custom-btn px-5 py-2.5 rounded-lg focus:ring-4 "
-              value="Add product"
+              value="Update product"
             />
           </div>
         </form>
