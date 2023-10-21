@@ -1,19 +1,25 @@
-import { useLoaderData } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
+import { useLoaderData, useParams } from "react-router-dom";
+import SingleProductDetails from "./SingleProductDetails";
 
 const DisplayProducts = () => {
-    const loadedProducts = useLoaderData();
+    const {id} = useParams();
+    const products = useLoaderData()
+
+
+    const product = products?.filter(pord => (pord?._id == id));
+    console.log('my pord',product);
+    console.log(products)
+
+
+    console.log(products)
     return (
-        <div>
-            {loadedProducts?.map((product) => (
-                <div key={product._id}>
-                    <h3>{product.name}</h3>
-                    <p>Price: {product.price}</p>
-                    <p>Rating: {product.rating}</p>
-                    <p>Description: {product.description}</p>
-                    <img src={product.photo} alt={product.name} />
-                </div>
-            ))}
-        </div>
+      <div>
+        {product?.map((product) => (
+           <SingleProductDetails key={product?._id} product={product} />
+        ))}
+      </div>
     );
 };
 
