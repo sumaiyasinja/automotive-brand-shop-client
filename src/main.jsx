@@ -7,10 +7,12 @@ import Home from './Pages/Home';
 import ErrorPage  from './Pages/ErrorPage';
 import AddProduct from './Pages/AddProduct';
 import UpdateProduct from './Pages/UpdateProduct';
-import DeleteProduct from './Pages/DeleteProduct';
 import SignIn from './Pages/SignIn';
 import Regsiter from './Pages/Regsiter';
 import AuthProvider from './provider/AuthProvider';
+import PrivateRoutes from './routes/PrivateRoutes';
+import DisplayProducts from './Pages/DisplayProducts';
+import BrandPage from './Components/BrandPage';
 
 
 const router = createBrowserRouter([
@@ -25,18 +27,28 @@ const router = createBrowserRouter([
       },
       {
         path: "/addProduct",
-        element: <AddProduct />,
+        element: <PrivateRoutes><AddProduct /></PrivateRoutes>
+      },
+      {
+        path: "/products",
+        element: <DisplayProducts />,
+        loader: () => fetch("http://localhost:5000/products"),
       },
       {
         path: "/updateProduct/:id",
         element: <UpdateProduct />,
-        loader: ({ params }) => fetch(`https://automotive-brand-shop-server.vercel.app/products/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`),
+        // loader: ({ params }) => fetch(`https://automotive-brand-shop-server.vercel.app/products/${params.id}`),
+      },
+      {
+        path: "/brands/:brands",
+        element: <PrivateRoutes><BrandPage /></PrivateRoutes> ,
+        loader: () => fetch("http://localhost:5000/products"),
+
       },
       
-      {
-        path: "/deleteProduct",
-        element: <DeleteProduct />,
-      },
+
+
       {
         path: "/signin",
         element: <SignIn />,

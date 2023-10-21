@@ -10,9 +10,8 @@ const Navbar = () => {
     const NavLinks= <>
         <li><NavLink  activeClassName="active" className="py-1 hover:text-red-500" to="/">Home</NavLink></li>
         <li><NavLink  activeClassName="active" className="py-1 hover:text-red-500" to="/addProduct">Add Product</NavLink></li>
-        <li><NavLink  activeClassName="active" className="py-1 hover:text-red-500" to="/updateProduct/65302aee267fe6e8769bead1">Up Product</NavLink></li>
-        <li><NavLink  activeClassName="active" className="py-1 hover:text-red-500" to="/about">About US</NavLink></li>
-        <li><NavLink  activeClassName="active" className="py-1 hover:text-red-500" to="/about">About US</NavLink></li>
+        <li><NavLink  activeClassName="active" className="py-1 hover:text-red-500" to="/updateProduct/65326c46bb6dc21bbeb94c5b">Up Product</NavLink></li>
+        <li><NavLink  activeClassName="active" className="py-1 hover:text-red-500" to="/mycart">My Cart</NavLink></li>
          </>
         //  https://quattro.true-emotions.studio/cart/
         // https://quattro.true-emotions.studio/

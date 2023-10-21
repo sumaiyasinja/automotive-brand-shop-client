@@ -20,7 +20,8 @@ const AddProduct = () => {
 
         console.log(newCar);
 
-        fetch('https://automotive-brand-shop-server.vercel.app/products', {
+        // fetch('https://automotive-brand-shop-server.vercel.app/products', {
+        fetch('http://localhost:5000/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
