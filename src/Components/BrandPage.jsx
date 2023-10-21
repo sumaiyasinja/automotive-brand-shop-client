@@ -1,12 +1,10 @@
 
-
-import { useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 const BrandPage = () => {
     const {brands} = useParams()
 
     const products = useLoaderData();
-    const product = products?.find(pord => (pord?.brands == brands));
+    const product = products?.filter(pord => (pord?.brands == brands));
     // const { title, details, img,price } = product;
     console.log(product);
     console.log(brands)
