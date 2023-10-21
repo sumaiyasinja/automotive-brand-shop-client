@@ -64,7 +64,7 @@ const Navbar = () => {
 
         </ul>
     </div>
-<button>Dark Light</button>    
+{/* <button>Dark Light</button>     */}
 
 <div className="navbar-end text-sm gap-3">
             {user ?             
