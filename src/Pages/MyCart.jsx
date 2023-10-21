@@ -25,25 +25,19 @@ const MyCart = () => {
         <button onClick={() =>{ handleDelete(product?._id)}} className="custom-btn">
             <ImBin></ImBin>
         </button>
-        {/* <button onClick={() =>{ handleUpdate(product?._id)}} className="custom-btn">
-            <GrDocumentUpdate></GrDocumentUpdate>
-        </button> */}
+
   </div>
       </div>
     </div>
   );
 
   useEffect(() => {
-    fetch("http://localhost:5000/cart")
+    fetch("https://automotive-brand-shop-server.vercel.app/cart")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
 
-  const handleUpdate=(id)=>{
-    console.log('update',id)
-    navigate(`/cart/${id}`)
-    
-}
+
   const handleDelete=(id)=>{
     console.log('delete',id)
     Swal.fire({
@@ -58,7 +52,7 @@ const MyCart = () => {
         if (result.isConfirmed) {
 
 
-            fetch(`http://localhost:5000/cart/${id}`, {
+            fetch(`https://automotive-brand-shop-server.vercel.app/cart/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

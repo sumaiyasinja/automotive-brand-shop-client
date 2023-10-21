@@ -38,22 +38,22 @@ const router = createBrowserRouter([
       {
         path: "/products/:id",
         element: <PrivateRoutes><DisplayProducts /></PrivateRoutes>,
-        loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`),
+        loader: ({params}) => fetch(`https://automotive-brand-shop-server.vercel.app/products/${params.id}`),
       },
       {
         path: "/update/:id",
         element: <PrivateRoutes><UpdateProduct /></PrivateRoutes> ,
-        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+        loader: ({ params }) => fetch(`https://automotive-brand-shop-server.vercel.app/products/${params.id}`)
       },
       // {
       //   path: "/updateProduct/:id",
       //   element: <UpdateProduct />,
-      //   loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`),
+      //   loader: ({ params }) => fetch(`https://automotive-brand-shop-server.vercel.app/products/${params.id}`),
       // },
       {
         path: "/brands/:brands",
         element: <PrivateRoutes><BrandPage /></PrivateRoutes> ,
-        loader: () => fetch("http://localhost:5000/products"),
+        loader: () => fetch("https://automotive-brand-shop-server.vercel.app/products"),
 
       },
       {
