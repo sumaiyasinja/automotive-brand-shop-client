@@ -1,6 +1,6 @@
 
 import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
+// import { Navigate } from 'react-router-dom';
 import BrandBanner from './BrandBanner';
 import { Link } from 'react-router-dom';
 const BrandPage = () => {
@@ -8,19 +8,19 @@ const BrandPage = () => {
     const navigate = useNavigate()
 
     const products = useLoaderData();
+    console.log("products",products);
     const filteredproduct = products?.filter(pord => (pord?.brands == brands));
     console.log(filteredproduct);
-    console.log(products);
     console.log(brands)
   
-//     const handleDetails =(product)=>{
-//     console.log('details')
-//     console.log("Viewing details of",product)
-//     navigate(`/products/${product._id}`)
-//    }
+
     const handleUpdate =(product)=>{
     console.log("Viewing update page of",product)
     navigate(`/update/${product._id}`)
+   }
+    const handleDetails =(product)=>{
+    console.log("Viewing deails page of",product._id)
+    navigate(`/products/${product._id}`)
    }
 
     return (
@@ -43,10 +43,11 @@ const BrandPage = () => {
                             <p>Rating: {product?.rating}</p>
                             <div className="card-actions justify-between">
 
-                              <Link to={`/products/${product._id}`}>
+                              {/* <Link to={`/products/${product._id}`}>
                                 <button className="custom-btn">Details</button>
 
-                              </Link>
+                              </Link> */}
+                                <button onClick={() => {handleDetails(product)} } className="custom-btn">Details</button>
                                 <button onClick={() => {handleUpdate(product)} } className="custom-btn">Update</button>
                             </div>
                         </div>

@@ -10,7 +10,9 @@ const SingleProductDetails = ({product}) => {
 
 
     const handleAddCart =(product)=>{
-        console.log(product)
+        
+        console.log("single page details",product)
+
         const email = user?.email
             const{ photo,name,types,price,brands }=product
             const cart = { photo, name, types, price, brands, email}
