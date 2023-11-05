@@ -26,7 +26,7 @@ function ShopFAQAccordion() {
     <div className='m-7 container mx-auto'>
       <div className="text-4xl font-semibold text-center py-5">Frequently Asked Questions</div>
       {faqItems.map((faq, index) => (
-        <div className="my-4 collapse bg-base-200" key={index}>
+        <div className="my-4 collapse bg-base-200 text-black" key={index}>
           <input
             type="radio"
             name="shop-faq-accordion"

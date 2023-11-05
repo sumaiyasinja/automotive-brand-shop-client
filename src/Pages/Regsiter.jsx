@@ -95,7 +95,7 @@ const Regsiter = () => {
                     <center>
                         <input className="sub-me" type="submit" value="Regsiter" />
                     </center>
-                    <p className="mt-2 text-white text-base text-center">Do not have an account?  
+                    <p className="mt-2 text-white text-base text-center">Already have an account?  
                     <Link to="/signin" className="text-blue-500"> Sign In</Link></p>
                 </form>
             </div>

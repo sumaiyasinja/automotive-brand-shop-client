@@ -7,10 +7,11 @@ const Banner = () => {
           className="w-full"
         />
 
-        <div className="absolute flex justify-between px-10  w-full items-center bg-[#0000003A] h-full text-white">
-        <div className="space-y-4  text-white  p-2">
+        <div className="absolute flex justify-between px-10 
+         w-full items-center bg-[#0000003A] h-full text-white">
+        <div className="md:space-y-4  text-white p-2">
                   <h4 className="text-red-500 font-semibold">Best Automotive Brand Shop in Your Town</h4>
-                  <p className="font-bold text-3xl">Explore Excellence in 
+                  <p className="font-bold lg:text-3xl">Explore Excellence in 
                 at  Driven<span className="text-red-600">Ways</span> Car Dealership <br />
                 Chase Your Speedy <span className="text-red-600">Fantasy</span> Today!</p>
 
@@ -36,9 +37,9 @@ const Banner = () => {
           className="w-full"
         />
         <div className="absolute flex justify-between px-10  w-full items-center bg-[#0000003A] h-full text-white">
-        <div className="space-y-4  text-white  p-2">
+        <div className="md:space-y-4  text-white  p-2">
                   <h4 className="text-red-500 font-semibold">Best Automotive Brand Shop in Your Town</h4>
-                  <p className="font-bold text-3xl">Explore Excellence
+                  <p className="font-bold lg:text-3xl">Explore Excellence
                     at Driven<span className="text-red-600">Ways</span> Car Shop. <br />
                     Discover Your Ride <span className="text-red-600">PARTNER</span> Today!</p>
                   
@@ -62,9 +63,9 @@ const Banner = () => {
           className="w-full"
         />
         <div className="absolute flex justify-between px-10  w-full items-center bg-[#0000003A] h-full text-white">
-        <div className="space-y-4  text-white  p-2">
+        <div className="md:space-y-4  text-white  p-2">
                   <h4 className="text-red-500 font-semibold">Best Automotive Brand Shop in Your Town</h4>
-                  <p className="font-bold text-3xl">Cruise into Elegance and Performance 
+                  <p className="font-bold lg:text-3xl">Cruise into Elegance and Performance 
                     at Driven<span className="text-red-600">Ways</span> Car Shop. <br />
                     Discover Your Dream <span className="text-red-600">RIDE</span> Today!</p>
                                       

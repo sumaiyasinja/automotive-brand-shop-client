@@ -9,7 +9,7 @@ const BrandBanner = ({ brands }) => {
             <a href={`#slide${index === 0 ? brands.length : index}`} className="btn btn-circle">❮</a>
             <a href={`#slide${index === brands.length - 1 ? 1 : index + 2}`} className="btn btn-circle">❯</a>
           </div>
-          <div className="absolute text-white bottom-20  p-4  w-full">
+          <div className="absolute text-white bottom-0 hidden lg:block p-4  w-full">
             
 <div className=" chat chat-start">
           <h4 className="text-red-500 font-semibold chat-bubble p-3">Best Automotive Brand car in best ptice?</h4>

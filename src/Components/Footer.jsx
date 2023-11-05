@@ -1,13 +1,14 @@
 
 const Footer = () => {
     return (
-        <div className="relative w-full">
-			<div className="h-[10%]">
+<div>
+<div className="relative w-full ">
+			<div className="h-[10%] hidden lg:block">
         <img  src="https://i.ibb.co/CKzB6jb/pexels-abdulwahab-alawadhi-3422964.jpg" alt="" />
 
 			</div>
         
-        <footer className="absolute top-0 flex justify-center items-center py-6 bg-[#000000AA] h-full text-white w-full">
+        <footer className=" lg:absolute top-0 flex justify-center items-center py-6 bg-[#000000AA] h-full text-white w-full ">
 	<div className="container px-6 mx-auto space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50">
 		<div className="grid grid-cols-1 lg:grid-cols-3 justify-between gap-3">
 			<div className="pb-6 lg:col-span-2 ">
@@ -92,6 +93,8 @@ const Footer = () => {
 	</div>
 </footer>
     </div>
+
+</div>
     );
 };
 

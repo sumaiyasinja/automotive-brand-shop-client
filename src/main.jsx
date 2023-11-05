@@ -30,30 +30,22 @@ const router = createBrowserRouter([
         path: "/addProduct",
         element: <PrivateRoutes><AddProduct /></PrivateRoutes>
       },
-      // {
-      //   path: "/products",
-      //   element: <PrivateRoutes><DisplayProducts /></PrivateRoutes>,
-      //   loader: () => fetch("https://automotive-brand-shop-server-49zcewzwu-sumaiyasinja.vercel.app/products"),
-      // },
+  
       {
         path: "/products/:id",
         element: <PrivateRoutes><DisplayProducts /></PrivateRoutes>,
-        loader: ({params}) => fetch(`https://automotive-brand-shop-server-49zcewzwu-sumaiyasinja.vercel.app/products/${params.id}`),
+        loader: ({params}) => fetch(`https://automotive-brand-shop-server.vercel.app/products/${params.id}`),
       },
       {
         path: "/update/:id",
         element: <PrivateRoutes><UpdateProduct /></PrivateRoutes> ,
-        loader: ({ params }) => fetch(`https://automotive-brand-shop-server-49zcewzwu-sumaiyasinja.vercel.app/products/${params.id}`)
+        loader: ({ params }) => fetch(`https://automotive-brand-shop-server.vercel.app/products/${params.id}`)
       },
-      // {
-      //   path: "/updateProduct/:id",
-      //   element: <UpdateProduct />,
-      //   loader: ({ params }) => fetch(`https://automotive-brand-shop-server-49zcewzwu-sumaiyasinja.vercel.app/products/${params.id}`),
-      // },
+ 
       {
         path: "/brands/:brands",
         element: <PrivateRoutes><BrandPage /></PrivateRoutes> ,
-        loader: () => fetch("https://automotive-brand-shop-server-49zcewzwu-sumaiyasinja.vercel.app/products"),
+        loader: () => fetch("https://automotive-brand-shop-server.vercel.app/products"),
 
       },
       {

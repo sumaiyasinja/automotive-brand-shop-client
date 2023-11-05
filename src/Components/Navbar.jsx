@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext,  } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
@@ -32,7 +32,7 @@ const Navbar = () => {
     
 
     return (
-    <div className="navbar bg-[#000000AA] fixed z-10">
+    <div className="navbar flex flex-col md:flex-row bg-[#000000AA] lg:fixed z-10">
     <Toaster position="bottom"></Toaster>
         
     <div className="navbar-start">
@@ -46,16 +46,16 @@ const Navbar = () => {
 
         </ul>
         </div>
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center p-5">
         <img className="max-h-14" src="https://i.ibb.co/8gqXQY9/wepik-modern-carepair-car-service-logo-20231018123809j-Tq-J.png" alt="" />
         
        
-        {
-            myToggle
-        }
 
     
         </div>
+        {
+            myToggle
+        }
     </div>
     <div className="navbar-center hidden lg:flex">
         <ul className="flex gap-4 px-1 text-white font-bold text-base ">
@@ -64,7 +64,6 @@ const Navbar = () => {
 
         </ul>
     </div>
-{/* <button>Dark Light</button>     */}
 
 <div className="navbar-end text-sm gap-3">
             {user ?             

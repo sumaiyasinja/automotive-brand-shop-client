@@ -9,7 +9,8 @@ import { useNavigate } from "react-router-dom";
 const MyCart = () => {
   const [products, setProducts] = useState([]);
   const { user } = useContext(AuthContext)
-  const navigate= useNavigate()
+  
+  
 
   const ProductCard = ({ product }) => (
     <div key={product?._id} className="card card-compact w-96 bg-base-100 shadow-xl">
@@ -32,7 +33,7 @@ const MyCart = () => {
   );
 
   useEffect(() => {
-    fetch("https://automotive-brand-shop-server-49zcewzwu-sumaiyasinja.vercel.app/cart")
+    fetch("https://automotive-brand-shop-server.vercel.app/cart")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -52,7 +53,7 @@ const MyCart = () => {
         if (result.isConfirmed) {
 
 
-            fetch(`https://automotive-brand-shop-server-49zcewzwu-sumaiyasinja.vercel.app/cart/${id}`, {
+            fetch(`https://automotive-brand-shop-server.vercel.app/cart/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
