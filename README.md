@@ -1,5 +1,5 @@
 
-# Project :Automotive Brand Shop
+# Project : Automotive Brand Shop
 
 A brand car shop where mongodb used for CRUD operation and firebase for login/registration authentication.
 
@@ -34,7 +34,7 @@ A brand car shop where mongodb used for CRUD operation and firebase for login/re
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone [https://github.com/sumaiyasinja/automotive-brand-shop-client](https://github.com/sumaiyasinja/automotive-brand-shop-client)
 ```
 
 Go to the project directory
